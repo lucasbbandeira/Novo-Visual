@@ -18,22 +18,9 @@ document.querySelectorAll(".menu a").forEach(link => {
 document.getElementById("contactForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const nome = document.getElementById("nome").value.trim();
-  const telefone = document.getElementById("telefone").value.trim();
-  const servico = document.getElementById("servico").value;
-  const mensagem = document.getElementById("mensagem").value.trim();
-
-  const texto = [
-    "Olá! Gostaria de falar com o Novo Visual Cabeleireiro.",
-    "",
-    `Nome: ${nome}`,
-    `Telefone: ${telefone}`,
-    `Serviço: ${servico}`,
-    mensagem ? `Mensagem: ${mensagem}` : ""
-  ].filter(Boolean).join("\n");
-
-  const url = `https://wa.me/5541999837261?text=${encodeURIComponent(texto)}`;
-  window.open(url, "_blank");
+  // Os dados do formulário ficam disponíveis para o cliente informar por telefone.
+  // Como não há integração com WhatsApp, o envio inicia uma ligação direta para o salão.
+  window.location.href = "tel:+554133536127";
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
